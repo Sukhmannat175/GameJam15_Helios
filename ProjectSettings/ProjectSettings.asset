@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: d41585d6bdc02b74793ffe5e539a9e2e
+  productGUID: 72885dedc7e18b84b83465a6e907eefc
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -763,10 +763,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 58d5b2b1-5ce5-4563-96fb-6b73d0cb0f89
+  cloudProjectId: 1e2f8290-eac6-4471-9e7d-410f3cfa251a
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: GameJam15_Helios
+  projectName: GameJam15_Helios 2024-07-18_13-06-40
   organizationId: frost_262
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
