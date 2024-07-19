@@ -18,6 +18,6 @@ MonoBehaviour:
   description: 
   icon: {fileID: 487550134, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}
   recipe:
-  - {fileID: 5872204827839988285, guid: d609fd28eee175349b0cc562a0a9e459, type: 3}
   - {fileID: 8365500385059401261, guid: 0f06bb3450404ed4484b11eca136b19d, type: 3}
+  - {fileID: 5872204827839988285, guid: d609fd28eee175349b0cc562a0a9e459, type: 3}
   componentIn: []
