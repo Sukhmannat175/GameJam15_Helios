@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b05fc2a54fbb014d905cb03bf8392ea, type: 3}
+  m_Name: Banana
+  m_EditorClassIdentifier: 
+  id: 1
+  name: Banana
+  itemType: 0
+  description: Its a scam
+  icon: {fileID: 1296022108, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}
+  recipe: []
+  componentIn:
+  - {fileID: 8462241931038490345, guid: de82217b152f1d545aaf753eb248c44b, type: 3}
