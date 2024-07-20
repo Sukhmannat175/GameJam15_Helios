@@ -8,6 +8,14 @@ using UnityEngine;
 [System.Serializable]
 public class ItemSO : ScriptableObject
 {
+    public int id;
+    public new string name;
+    public Type itemType;
+    public string description;
+    public Sprite icon;
+    public List<Item> recipe;
+    public List<Item> componentIn;
+
     public enum Type
     {
         Tier1,
@@ -18,12 +26,4 @@ public class ItemSO : ScriptableObject
         Quest,
         Market
     }
-
-    public int id;
-    public new string name;
-    public Type itemType;
-    public string description;
-    public Sprite icon;
-    public List<Item> recipe;
-    public List<Item> componentIn;
 }
