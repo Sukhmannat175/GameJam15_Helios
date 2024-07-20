@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item : MonoBehaviour, IComparable, IComparable<Item>
+public class Item : MonoBehaviour
 {
     public ItemSO item;
     SpriteRenderer sr;
@@ -20,21 +20,5 @@ public class Item : MonoBehaviour, IComparable, IComparable<Item>
     void Update()
     {
         
-    }
-
-    public int CompareTo(object obj)
-    {
-        if (obj == null) return 1;
-
-        if (obj is Item other) return CompareTo(other);
-
-        throw new ArgumentException("An Item object is required for comparison.", "obj");
-    }
-
-    public int CompareTo(Item other)
-    {
-        if (other == null) return 1;
-
-        return -string.Compare(this.item.name, other.item.name, StringComparison.OrdinalIgnoreCase);
     }
 }

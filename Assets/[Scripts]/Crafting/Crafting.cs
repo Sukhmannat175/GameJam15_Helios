@@ -23,7 +23,7 @@ public class Crafting : MonoBehaviour
             //pot.Sort();
             foreach(Item item in pot[0].item.componentIn)
             {
-                item.item.recipe.Sort();
+                //item.item.recipe.Sort();
                 if (pot.All(item.item.recipe.Contains) && pot.Count == item.item.recipe.Count) Debug.Log("crafted");  
                 else Debug.Log("Not Crafted");
             }            
