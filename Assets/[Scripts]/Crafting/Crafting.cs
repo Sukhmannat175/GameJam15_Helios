@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class Crafting : MonoBehaviour
 {
-    public List<Item> pot;
-    public GameObject ban;
-    public GameObject app;
+    public List<Item> crafter;
 
     // Start is called before the first frame update
     void Start()
@@ -21,25 +19,12 @@ public class Crafting : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.C))
         {
             //pot.Sort();
-            foreach(Item item in pot[0].item.componentIn)
+            foreach(Item item in crafter[0].itemSO.componentIn)
             {
                 //item.item.recipe.Sort();
-                if (pot.All(item.item.recipe.Contains) && pot.Count == item.item.recipe.Count) Debug.Log("crafted");  
+                if (crafter.All(item.itemSO.recipe.Contains) && crafter.Count == item.itemSO.recipe.Count) Debug.Log("crafted");
                 else Debug.Log("Not Crafted");
             }            
         }
-
-        if(Input.GetKeyUp(KeyCode.B))
-        {
-            Instantiate(ban);
-            this.pot.Add(ban.GetComponent<Item>());
-        }
-
-        if (Input.GetKeyUp(KeyCode.A))
-        {
-            Instantiate(app);
-            this.pot.Add(app.GetComponent<Item>());
-        }
-
     }
 }

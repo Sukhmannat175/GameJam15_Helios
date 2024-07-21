@@ -14,11 +14,11 @@ public class InventoryController : MonoBehaviour
             Item item = slots[i].GetComponentInChildren<Item>();
 
             if(item != null &&
-                item.item == itemSO &&
+                item.itemSO == itemSO &&
                 item.count < 6)
             {
                 item.count++;
-                item.countText.text = item.count.ToString();
+                item.Recount();
                 return;
             }
 

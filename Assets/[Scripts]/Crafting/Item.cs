@@ -10,21 +10,26 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public Image image;
     public TMP_Text countText;
 
-    [HideInInspector] public ItemSO item;
+    [HideInInspector] public ItemSO itemSO;
     [HideInInspector] public int count = 1;
     [HideInInspector] public Transform parent;
 
     // Start is called before the first frame update
     void Start()
     {
-        name = item.name;
-        InitilizeItem(item);
+        name = itemSO.name;
+        InitilizeItem(itemSO);
     }
 
     public void InitilizeItem(ItemSO newItem)
     {
-        item = newItem;
+        itemSO = newItem;
         image.sprite = newItem.icon;
+        countText.text = count.ToString();
+    }
+
+    public void Recount()
+    {
         countText.text = count.ToString();
     }
 
