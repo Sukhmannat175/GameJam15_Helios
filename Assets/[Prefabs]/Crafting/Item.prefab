@@ -227,6 +227,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 6046431328343162089}
   countText: {fileID: 2341742083077475257}
-  item: {fileID: 0}
+  itemSO: {fileID: 11400000, guid: 6267f128ffaf908428a68d38936c72de, type: 2}
   count: 1
   parent: {fileID: 0}

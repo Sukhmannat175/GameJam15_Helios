@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
-public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image image;
     public TMP_Text countText;
 
-    [HideInInspector] public ItemSO itemSO;
-    [HideInInspector] public int count = 1;
-    [HideInInspector] public Transform parent;
+    public ItemSO itemSO;
+    public int count = 1;
+    public Transform parent;
 
     // Start is called before the first frame update
     void Start()
@@ -26,10 +26,15 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         itemSO = newItem;
         image.sprite = newItem.icon;
         countText.text = count.ToString();
+        parent = gameObject.transform.parent;
     }
 
     public void Recount()
     {
+        if(count <= 0)
+        {
+            Destroy(this.gameObject);
+        }
         countText.text = count.ToString();
     }
 
@@ -48,6 +53,16 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void OnEndDrag(PointerEventData eventData)
     {
         image.raycastTarget = true;
+        transform.SetParent(parent);
+    }
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if(CraftingController.Instance.AddIngredient(itemSO))
+        {
+            count--;
+            Recount();
+        }
         transform.SetParent(parent);
     }
 }

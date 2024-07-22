@@ -19,4 +19,4 @@ MonoBehaviour:
   icon: {fileID: 1296022108, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}
   recipe: []
   componentIn:
-  - {fileID: 8462241931038490345, guid: de82217b152f1d545aaf753eb248c44b, type: 3}
+  - {fileID: 11400000, guid: f4ba4523dc8d26f43a094d5f31ab632b, type: 2}

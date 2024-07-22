@@ -13,8 +13,8 @@ public class ItemSO : ScriptableObject
     public Type itemType;
     public string description;
     public Sprite icon;
-    public List<Item> recipe;
-    public List<Item> componentIn;
+    public List<ItemSO> recipe;
+    public List<ItemSO> componentIn;
 
     public enum Type
     {
