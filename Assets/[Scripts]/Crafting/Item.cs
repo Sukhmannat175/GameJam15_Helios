@@ -29,9 +29,16 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
         parent = gameObject.transform.parent;
     }
 
-    public void Recount()
+    public void AddCount()
     {
-        if(count <= 0)
+        count++;
+        countText.text = count.ToString();
+    }
+
+    public void SubCount()
+    {
+        count--;
+        if (count <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -54,15 +61,26 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         image.raycastTarget = true;
         transform.SetParent(parent);
+        if (transform.parent.tag == "IngredientSlot")
+        {
+            if (!CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Add(itemSO, count);
+            CraftingController.Instance.PreCraft();
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(CraftingController.Instance.AddIngredient(itemSO))
+        if(eventData.button == PointerEventData.InputButton.Left)
         {
-            count--;
-            Recount();
+            if (CraftingController.Instance.AddIngredient(itemSO))
+            {
+                SubCount();
+            }
+            transform.SetParent(parent);
         }
-        transform.SetParent(parent);
+
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+        }
     }
 }
