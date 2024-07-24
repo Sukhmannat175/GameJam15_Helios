@@ -16,10 +16,25 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
 
     public void OnDrop(PointerEventData eventData)
     {
-        if (transform.childCount == 0)
+        Item inventoryItem = eventData.pointerDrag.GetComponent<Item>();
+
+        if (inventoryItem.parent.CompareTag("ProductSlot")) return;
+
+        Debug.Log(inventoryItem.name + inventoryItem.count);
+
+        if (inventoryItem != null)
         {
-            Item inventoryItem = eventData.pointerDrag.GetComponent<Item>();
-            if (inventoryItem != null) inventoryItem.parent = transform;
+            if (transform.childCount == 0)
+            {
+                Debug.Log("new slot");
+                inventoryItem.parent = transform;
+            }
+            if (transform.childCount > 0 &&
+                transform.GetComponentInChildren<Item>().itemSO == inventoryItem.itemSO)
+            {
+                Debug.Log("merge" + inventoryItem.name + inventoryItem.count);
+                CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<Item>());
+            }
         }
     }
 

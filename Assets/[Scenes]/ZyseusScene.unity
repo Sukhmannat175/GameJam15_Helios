@@ -6173,7 +6173,7 @@ MonoBehaviour:
   products:
   - {fileID: 11400000, guid: f4ba4523dc8d26f43a094d5f31ab632b, type: 2}
   - {fileID: 11400000, guid: dabfba95598705d45bec27120f2c4b43, type: 2}
-  product: {fileID: 746196053}
+  productSlot: {fileID: 746196053}
   itemPrefab: {fileID: 5861813221366716555, guid: 0a00607e15ba22f45b31752a145c3cb3, type: 3}
   crafter: {fileID: 1837561126}
 --- !u!1 &457633839

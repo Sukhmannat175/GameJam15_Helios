@@ -16,7 +16,7 @@ MonoBehaviour:
   name: Mango
   itemType: 1
   description: 
-  icon: {fileID: 487550134, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}
+  icon: {fileID: 1779141550, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}
   recipe:
   - {fileID: 11400000, guid: 6267f128ffaf908428a68d38936c72de, type: 2}
   - {fileID: 11400000, guid: e8e54091bcb56774ba2dad378f190584, type: 2}

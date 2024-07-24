@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using System.Linq;
+
 public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerClickHandler
 {
     public Image image;
@@ -18,42 +20,60 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     void Start()
     {
         name = itemSO.name;
-        InitilizeItem(itemSO);
     }
 
-    public void InitilizeItem(ItemSO newItem)
+    public void InitilizeItem(ItemSO newItem, int count)
     {
         itemSO = newItem;
+        this.count = count;
         image.sprite = newItem.icon;
         countText.text = count.ToString();
         parent = gameObject.transform.parent;
     }
 
-    public void AddCount()
+    public void AddCount(int num)
     {
-        count++;
-        countText.text = count.ToString();
+        count += num;
+        Recount();
     }
 
-    public void SubCount()
+    public void SubCount(int num)
     {
-        count--;
+        count -= num;
+        Recount();        
+    }
+
+    public void Recount()
+    {
+        countText.text = count.ToString();
         if (count <= 0)
         {
             Destroy(this.gameObject);
         }
-        countText.text = count.ToString();
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        if (transform.parent.CompareTag("ProductSlot")) return;
+
         image.raycastTarget = false;
+        if (transform.parent.CompareTag("IngredientSlot"))
+        {
+            if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Remove(itemSO);
+            parent = transform.parent;
+            transform.SetParent(transform.root);
+            CraftingController.Instance.PreCraft();
+            return;
+        }
+        
         parent = transform.parent;
         transform.SetParent(transform.root);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (transform.parent.CompareTag("ProductSlot")) return;
+
         transform.position = Input.mousePosition;
     }
 
@@ -61,7 +81,7 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     {
         image.raycastTarget = true;
         transform.SetParent(parent);
-        if (transform.parent.tag == "IngredientSlot")
+        if (transform.parent.CompareTag("IngredientSlot"))
         {
             if (!CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Add(itemSO, count);
             CraftingController.Instance.PreCraft();
@@ -70,17 +90,24 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        if(eventData.button == PointerEventData.InputButton.Left)
+        if (transform.parent.CompareTag("ProductSlot")) return;
+
+        if (eventData.button == PointerEventData.InputButton.Left)
         {
             if (CraftingController.Instance.AddIngredient(itemSO))
             {
-                SubCount();
+                SubCount(1);
             }
             transform.SetParent(parent);
         }
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            if (CraftingController.Instance.RemoveIngredient(itemSO))
+            {
+                SubCount(1);
+            }
+            transform.SetParent(parent);
         }
     }
 }
