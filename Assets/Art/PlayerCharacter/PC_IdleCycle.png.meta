@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,259 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PC_IdleCycle_0
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 1370
+        width: 376
+        height: 544
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f9b6f44dc0f5a47899aad8636dc426
+      internalID: -446952455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_1
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 1370
+        width: 376
+        height: 529
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d384319f1b86f47b3e119be61b543b
+      internalID: 980159821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_2
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 1375
+        width: 372
+        height: 545
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca405295117cda43b3b6f40ea65ab25
+      internalID: -54891566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_3
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 1665
+        width: 66
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58aa3612dc0976f419722448e6a93b45
+      internalID: -1141966137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_4
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 1475
+        width: 69
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b54d33ff02a0ec44faa4492e9c77ca6c
+      internalID: -907535707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_5
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 1278
+        width: 56
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ae679529ef25141b0921e69969c17f
+      internalID: -536189846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 732
+        width: 383
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dda5785d4c770a47a14c400c7a15f89
+      internalID: 1069853654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_7
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 732
+        width: 385
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee162c39c9309b646b50f60f98f638f0
+      internalID: 1763997357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_8
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 732
+        width: 383
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdf650c019d93f42a62e019b3d8647f
+      internalID: -1370572575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_9
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 83
+        width: 379
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dd5ee344f7d95c4ea05783fe6b35e7a
+      internalID: -583819439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_10
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 83
+        width: 380
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9221d7a3127617f45b187737ff5c50f4
+      internalID: 601569570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_11
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 83
+        width: 379
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ac929c26ae86c4eb0b3d4866c31d4a
+      internalID: -1107919443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +384,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PC_IdleCycle_0: -446952455
+      PC_IdleCycle_1: 980159821
+      PC_IdleCycle_10: 601569570
+      PC_IdleCycle_11: -1107919443
+      PC_IdleCycle_2: -54891566
+      PC_IdleCycle_3: -1141966137
+      PC_IdleCycle_4: -907535707
+      PC_IdleCycle_5: -536189846
+      PC_IdleCycle_6: 1069853654
+      PC_IdleCycle_7: 1763997357
+      PC_IdleCycle_8: -1370572575
+      PC_IdleCycle_9: -583819439
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

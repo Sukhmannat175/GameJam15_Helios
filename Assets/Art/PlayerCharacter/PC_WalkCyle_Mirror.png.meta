@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PC_WalkCyle_Mirror_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 83
+        width: 379
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2341054c884830748be95bfa062a618b
+      internalID: -1152934054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_Mirror_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 85
+        width: 379
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 988e54cfab6106646b4120cf14bc96d6
+      internalID: 1251461360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_Mirror_2
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 84
+        width: 379
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ffbfc2e8a7c4b4abc8d7e9ad595890
+      internalID: 287557244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_Mirror_3
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 82
+        width: 379
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5263c79cd76f8444db9f4ceda1bdfdd4
+      internalID: -986592761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PC_WalkCyle_Mirror_0: -1152934054
+      PC_WalkCyle_Mirror_1: 1251461360
+      PC_WalkCyle_Mirror_2: 287557244
+      PC_WalkCyle_Mirror_3: -986592761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

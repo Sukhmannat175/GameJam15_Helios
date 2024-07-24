@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - IngredientSlot
+  - ProductSlot
   layers:
   - Default
   - TransparentFX

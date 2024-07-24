@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Peach
   m_EditorClassIdentifier: 
   id: 3
-  name: Mango
+  name: Peach
   itemType: 1
   description: 
   icon: {fileID: 1779141550, guid: ef212d50eb874ca4b892defc71433ed0, type: 3}

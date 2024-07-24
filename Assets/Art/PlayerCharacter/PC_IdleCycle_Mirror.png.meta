@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PC_IdleCycle_Mirror_0
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 82
+        width: 379
+        height: 533
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f0ceeda15daf845bacdc9b636cd709
+      internalID: -1392135822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_Mirror_1
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 82
+        width: 380
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a0b39513fbfc24284c42f698c4a32e
+      internalID: 1244274675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_IdleCycle_Mirror_2
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 82
+        width: 379
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256956308ed3ebd4e87cb24951394513
+      internalID: -1807875503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PC_IdleCycle_Mirror_0: -1392135822
+      PC_IdleCycle_Mirror_1: 1244274675
+      PC_IdleCycle_Mirror_2: -1807875503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

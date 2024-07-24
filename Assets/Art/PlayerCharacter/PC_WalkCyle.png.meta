@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,322 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: PC_WalkCyle_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1373
+        width: 374
+        height: 543
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfda6446037f6c04ba483b5e952a51ba
+      internalID: -1481677505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_1
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1357
+        width: 374
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b1bb5e57527e954a8b28c032e3a9644
+      internalID: 176226933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_2
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 1357
+        width: 374
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6e8224f93b5bb46a86a2ddf5b3571c
+      internalID: -1700993472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_3
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 1375
+        width: 374
+        height: 521
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab7c29012b1bb344b7dfb993b9aaa6f
+      internalID: 949470551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 731
+        width: 384
+        height: 539
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d01793b5feccad47a09fc1e5d23f55d
+      internalID: -202751417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_5
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 730
+        width: 384
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dcfd06e15024b042bc634a43097e008
+      internalID: -1437532168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_6
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 735
+        width: 384
+        height: 514
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2780f5bdc1f293147b70f1eccd4d7a8b
+      internalID: -168645879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_7
+      rect:
+        serializedVersion: 2
+        x: 1458
+        y: 730
+        width: 384
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8aa46a4a00eb7741abe4d9ccf734fc9
+      internalID: -475085668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 83
+        width: 379
+        height: 540
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50ca1eee602f75458d176a132d983c2
+      internalID: 817101680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_9
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 85
+        width: 379
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc27af58ea7b011489ca1cd05791da1e
+      internalID: 313592914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_10
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 86
+        width: 379
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82cf1c6ae460f846a7057831a69b604
+      internalID: 1055130220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_11
+      rect:
+        serializedVersion: 2
+        x: 1388
+        y: 84
+        width: 379
+        height: 538
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fc281f25a2ba740a7e89c952003601
+      internalID: 1955784781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_12
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 480
+        width: 66
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a875e915d74ebb43b3f0e6d693e18be
+      internalID: -1222993334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_13
+      rect:
+        serializedVersion: 2
+        x: 1825
+        y: 290
+        width: 69
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a252de1c7d778724a9f3055fff4ebce2
+      internalID: -1781950448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC_WalkCyle_14
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 93
+        width: 56
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66db6940e31bb0d4f99f235dcdf03c8f
+      internalID: 73204319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +447,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PC_WalkCyle_0: -1481677505
+      PC_WalkCyle_1: 176226933
+      PC_WalkCyle_10: 1055130220
+      PC_WalkCyle_11: 1955784781
+      PC_WalkCyle_12: -1222993334
+      PC_WalkCyle_13: -1781950448
+      PC_WalkCyle_14: 73204319
+      PC_WalkCyle_2: -1700993472
+      PC_WalkCyle_3: 949470551
+      PC_WalkCyle_4: -202751417
+      PC_WalkCyle_5: -1437532168
+      PC_WalkCyle_6: -168645879
+      PC_WalkCyle_7: -475085668
+      PC_WalkCyle_8: 817101680
+      PC_WalkCyle_9: 313592914
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
