@@ -20,6 +20,7 @@ public class CraftingController : MonoBehaviour
     public GameObject itemPrefab;
     public GameObject crafter;
     public Button btnCraft;
+    public ShadowMeter shadowMeter;
 
     private Dictionary<ItemSO, Dictionary<ItemSO, int>> recipes;
     private ItemSO product;
@@ -296,6 +297,7 @@ public class CraftingController : MonoBehaviour
     {
         AddItem(product, ing1 / rec1);
         Destroy(productSlot.GetComponentInChildren<Item>().gameObject);
+        shadowMeter.currentValue += 10;
 
         for (int i = 0; i < ingredientSlots.Count; i++)
         {

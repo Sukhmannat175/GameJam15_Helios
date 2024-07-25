@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShadowTimerScript : MonoBehaviour
+public class ShadowMeter : MonoBehaviour
 {
-
-
     [SerializeField] private Image uiFill;
 
     public float maxValue;
