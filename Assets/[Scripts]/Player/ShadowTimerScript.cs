@@ -9,40 +9,19 @@ public class ShadowTimerScript : MonoBehaviour
 
     [SerializeField] private Image uiFill;
 
-    public int Duration;
-
-    private int DurationRemaining;
+    public float maxValue;
+    public float currentValue;
+    public float rate;
 
 
     // Start is called before the first frame update
-    private void Start()
+
+    private void Update()
     {
-        Being(Duration);
+        currentValue -= rate/60;
+        uiFill.fillAmount = Mathf.InverseLerp(0, maxValue, currentValue);
+
+        if (currentValue <= 0) Debug.Log("U dead");
     }
-
-    private void Being(int Seconds)
-    {
-        DurationRemaining = Seconds;
-        StartCoroutine(UpdateTimer());
-    }
-
-    private IEnumerator UpdateTimer()
-    {
-        while (DurationRemaining >= 0)
-        {
-            uiFill.fillAmount = Mathf.InverseLerp(0, Duration, DurationRemaining);
-            DurationRemaining--;
-            yield return new WaitForSeconds(1f);
-        }
-        OnEnd();
-    }
-
-    private void OnEnd()
-    {
-        //what happens when the timer runs out
-        print("Dawg You Fucking Died");
-    }
-
-
   
 }
