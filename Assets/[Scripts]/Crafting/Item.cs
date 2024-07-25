@@ -46,6 +46,11 @@ public class Item : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHand
     public void Recount()
     {
         countText.text = count.ToString();
+        if (count > 6)
+        {
+            CraftingController.Instance.AddItem(itemSO, count - 6);
+            this.count = 6;
+        }
         if (count <= 0)
         {
             Destroy(this.gameObject);

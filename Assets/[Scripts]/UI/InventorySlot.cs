@@ -26,13 +26,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
         {
             if (transform.childCount == 0)
             {
-                Debug.Log("new slot");
                 inventoryItem.parent = transform;
             }
             if (transform.childCount > 0 &&
                 transform.GetComponentInChildren<Item>().itemSO == inventoryItem.itemSO)
             {
-                Debug.Log("merge" + inventoryItem.name + inventoryItem.count);
                 CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<Item>());
             }
         }

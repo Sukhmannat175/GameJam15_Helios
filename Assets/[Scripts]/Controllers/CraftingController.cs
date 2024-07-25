@@ -75,14 +75,12 @@ public class CraftingController : MonoBehaviour
                 item.itemSO == itemSO &&
                 item.count < maxStack)
             {
-                Debug.Log("stacked" + item.count);
-                item.AddCount(1);
+                item.AddCount(count);
                 return;
             }
 
             if (item == null) 
             {
-                Debug.Log("not stacked" + count);
                 GameObject obj = Instantiate(itemPrefab, itemSlots[i].transform);
                 obj.GetComponent<Item>().InitilizeItem(itemSO, count);
                 return;
@@ -96,7 +94,6 @@ public class CraftingController : MonoBehaviour
             merge.itemSO == item.itemSO)
         {
             int sum = merge.count + item.count;
-            Debug.Log(merge.count + "+" + item.count + "=" + sum);
             if (sum <= maxStack)
             {
                 item.count = merge.count + item.count;
@@ -106,7 +103,6 @@ public class CraftingController : MonoBehaviour
             }
             if (sum > maxStack)
             {
-                Debug.Log(">maxstack" + (sum - maxStack));
                 item.count = maxStack;
                 item.Recount();
                 AddItem(merge.itemSO, sum - maxStack);
@@ -178,6 +174,9 @@ public class CraftingController : MonoBehaviour
 
     public void PreCraft()
     {
+        if(ingredients.Count > 0) Debug.Log(ingredients.ElementAt(0));
+        if (ingredients.Count > 1) Debug.Log(ingredients.ElementAt(1));
+        if (ingredients.Count > 2) Debug.Log(ingredients.ElementAt(2));
         btnCraft.gameObject.SetActive(false);
         if (productSlot.GetComponentInChildren<Item>() != null)
         {
@@ -307,16 +306,19 @@ public class CraftingController : MonoBehaviour
                 if (i == 0)
                 {
                     ingredients[item.itemSO] -= ing1;
+                    if (ingredients[item.itemSO] == 0) ingredients.Remove(item.itemSO);
                     item.SubCount(ing1);
                 }
                 if (i == 1)
                 {
                     ingredients[item.itemSO] -= ing2;
+                    if (ingredients[item.itemSO] == 0) ingredients.Remove(item.itemSO);
                     item.SubCount(ing2);
                 }
                 if (i == 2)
                 {
                     ingredients[item.itemSO] -= ing3;
+                    if (ingredients[item.itemSO] == 0) ingredients.Remove(item.itemSO);
                     item.SubCount(ing3);
                 }
             }
