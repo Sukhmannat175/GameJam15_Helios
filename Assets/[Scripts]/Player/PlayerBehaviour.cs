@@ -14,9 +14,9 @@ public class PlayerBehaviour : MonoBehaviour
 
     private Rigidbody2D rb;
     private Vector2 movement;
+    private List<GameObject> destructibles;
     private float holdStart;
     private float lightIntensity = 1;
-    private bool kill = false;
     private bool dim = true;
 
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        destructibles = new List<GameObject>();
     }
 
     // Update is called once per frame
@@ -93,12 +94,18 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 lantern.intensity += 0.008f;
             }
-            if (hold >= 2) kill = true;
+            if (hold >= 1.5f)
+            {
+                foreach (GameObject go in destructibles)
+                {
+                    Debug.Log("destroyed");
+                    go.GetComponent<SpriteRenderer>().sprite = null;
+                }
+            }
         }
 
         if (Input.GetMouseButtonUp(0))
         {
-            kill = false;
             dim = true;
         }
 
@@ -115,10 +122,20 @@ public class PlayerBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Destructible") && kill)
+        if (other.gameObject.CompareTag("Destructible"))
         {
-            Debug.Log("item drop");
-            kill = false;
+            destructibles.Add(other.gameObject);
+            Debug.Log("added" + other.gameObject.name);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Destructible"))
+        {
+            destructibles.Remove(other.gameObject);
+            Debug.Log("removed" + other.gameObject.name);
+            if (other.GetComponent<SpriteRenderer>() == null) Destroy(other.gameObject);
         }
     }
 }

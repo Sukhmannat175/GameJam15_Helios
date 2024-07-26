@@ -6,6 +6,7 @@ TagManager:
   tags:
   - IngredientSlot
   - ProductSlot
+  - Destructible
   layers:
   - Default
   - TransparentFX

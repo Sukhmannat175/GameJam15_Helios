@@ -70,7 +70,7 @@ public class CraftingController : MonoBehaviour
     {
         for (int i = 0; i < itemSlots.Count; i++)
         {
-            Item item = itemSlots[i].GetComponentInChildren<Item>();
+            ItemUI item = itemSlots[i].GetComponentInChildren<ItemUI>();
 
             if(item != null &&
                 item.itemSO == itemSO &&
@@ -83,13 +83,13 @@ public class CraftingController : MonoBehaviour
             if (item == null) 
             {
                 GameObject obj = Instantiate(itemPrefab, itemSlots[i].transform);
-                obj.GetComponent<Item>().InitilizeItem(itemSO, count);
+                obj.GetComponent<ItemUI>().InitilizeItem(itemSO, count);
                 return;
             }
         }
     }
 
-    public void MergeItems(Item merge, Item item)
+    public void MergeItems(ItemUI merge, ItemUI item)
     {
         if (merge.itemSO != null &&
             merge.itemSO == item.itemSO)
@@ -117,7 +117,7 @@ public class CraftingController : MonoBehaviour
     {
         for (int i = 0; i < ingredientSlots.Count; i++)
         {
-            Item item = ingredientSlots[i].GetComponentInChildren<Item>();
+            ItemUI item = ingredientSlots[i].GetComponentInChildren<ItemUI>();
 
             if (item != null &&
                 item.itemSO == itemSO)
@@ -139,7 +139,7 @@ public class CraftingController : MonoBehaviour
             if (item == null) 
             {
                 GameObject obj = Instantiate(itemPrefab, ingredientSlots[i].transform);
-                Item objItem = obj.GetComponent<Item>();
+                ItemUI objItem = obj.GetComponent<ItemUI>();
                 objItem.InitilizeItem(itemSO, 1);
                 objItem.parent = ingredientSlots[i].transform;
 
@@ -158,7 +158,7 @@ public class CraftingController : MonoBehaviour
     {
         for (int i = 0; i < ingredientSlots.Count; i++)
         {
-            Item item = ingredientSlots[i].GetComponentInChildren<Item>();
+            ItemUI item = ingredientSlots[i].GetComponentInChildren<ItemUI>();
 
             if (item != null &&
                 item.itemSO == itemSO)
@@ -179,9 +179,9 @@ public class CraftingController : MonoBehaviour
         if (ingredients.Count > 1) Debug.Log(ingredients.ElementAt(1));
         if (ingredients.Count > 2) Debug.Log(ingredients.ElementAt(2));
         btnCraft.gameObject.SetActive(false);
-        if (productSlot.GetComponentInChildren<Item>() != null)
+        if (productSlot.GetComponentInChildren<ItemUI>() != null)
         {
-            Destroy(productSlot.GetComponentInChildren<Item>().gameObject);
+            Destroy(productSlot.GetComponentInChildren<ItemUI>().gameObject);
         }
 
         if (ingredients.Count <= 1) return;
@@ -286,7 +286,7 @@ public class CraftingController : MonoBehaviour
     public void ShowProduct()
     {
         GameObject obj = Instantiate(itemPrefab, productSlot.transform);
-        Item objItem = obj.GetComponent<Item>();
+        ItemUI objItem = obj.GetComponent<ItemUI>();
         objItem.InitilizeItem(product, ing1 / rec1);
         objItem.parent = productSlot.transform;
         objItem.image.raycastTarget = false;
@@ -296,12 +296,12 @@ public class CraftingController : MonoBehaviour
     public void Craft()
     {
         AddItem(product, ing1 / rec1);
-        Destroy(productSlot.GetComponentInChildren<Item>().gameObject);
+        Destroy(productSlot.GetComponentInChildren<ItemUI>().gameObject);
         shadowMeter.currentValue += 10;
 
         for (int i = 0; i < ingredientSlots.Count; i++)
         {
-            Item item = ingredientSlots[i].GetComponentInChildren<Item>();
+            ItemUI item = ingredientSlots[i].GetComponentInChildren<ItemUI>();
 
             if (item != null)
             {

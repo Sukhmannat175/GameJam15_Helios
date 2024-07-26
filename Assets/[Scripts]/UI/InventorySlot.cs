@@ -16,7 +16,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
 
     public void OnDrop(PointerEventData eventData)
     {
-        Item inventoryItem = eventData.pointerDrag.GetComponent<Item>();
+        ItemUI inventoryItem = eventData.pointerDrag.GetComponent<ItemUI>();
 
         if (inventoryItem.parent.CompareTag("ProductSlot")) return;
 
@@ -29,9 +29,9 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
                 inventoryItem.parent = transform;
             }
             if (transform.childCount > 0 &&
-                transform.GetComponentInChildren<Item>().itemSO == inventoryItem.itemSO)
+                transform.GetComponentInChildren<ItemUI>().itemSO == inventoryItem.itemSO)
             {
-                CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<Item>());
+                CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<ItemUI>());
             }
         }
     }
