@@ -18,9 +18,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
     {
         ItemUI inventoryItem = eventData.pointerDrag.GetComponent<ItemUI>();
 
-        if (inventoryItem.parent.CompareTag("ProductSlot")) return;
-
-        Debug.Log(inventoryItem.name + inventoryItem.count);
+        if (CompareTag("ProductSlot")) return;
 
         if (inventoryItem != null)
         {

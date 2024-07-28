@@ -53,12 +53,13 @@ public class CraftingController : MonoBehaviour
 
             foreach (ItemSO i in itemSO.recipe)
             {
-                if (!temp.ContainsKey(i)) temp.Add(i, 1);
+                if (!temp.ContainsKey(i)) temp.Add(i, 1); 
                 else temp[i]++;
             }
 
             recipes.Add(itemSO, temp);
         }
+
     }
 
     public void AddItem(ItemSO itemSO)
@@ -83,7 +84,7 @@ public class CraftingController : MonoBehaviour
             if (item == null) 
             {
                 GameObject obj = Instantiate(itemPrefab, itemSlots[i].transform);
-                obj.GetComponent<ItemUI>().InitilizeItem(itemSO, count);
+                obj.GetComponent<ItemUI>().InitilizeItemUI(itemSO, count);
                 return;
             }
         }
@@ -140,7 +141,7 @@ public class CraftingController : MonoBehaviour
             {
                 GameObject obj = Instantiate(itemPrefab, ingredientSlots[i].transform);
                 ItemUI objItem = obj.GetComponent<ItemUI>();
-                objItem.InitilizeItem(itemSO, 1);
+                objItem.InitilizeItemUI(itemSO, 1);
                 objItem.parent = ingredientSlots[i].transform;
 
                 if(!ingredients.ContainsKey(itemSO)) ingredients.Add(itemSO, 1);
@@ -175,22 +176,22 @@ public class CraftingController : MonoBehaviour
 
     public void PreCraft()
     {
-        if(ingredients.Count > 0) Debug.Log(ingredients.ElementAt(0));
-        if (ingredients.Count > 1) Debug.Log(ingredients.ElementAt(1));
-        if (ingredients.Count > 2) Debug.Log(ingredients.ElementAt(2));
+        foreach (KeyValuePair<ItemSO, int> kvp in ingredients)
+        {
+            Debug.Log(kvp.Key + " " + kvp.Value);
+        }
+
         btnCraft.gameObject.SetActive(false);
         if (productSlot.GetComponentInChildren<ItemUI>() != null)
         {
             Destroy(productSlot.GetComponentInChildren<ItemUI>().gameObject);
         }
 
-        if (ingredients.Count <= 1) return;
-        Dictionary<ItemSO, int> backup = new Dictionary<ItemSO, int>();
-                
+        if (ingredients.Count <= 0) return;                
 
         foreach (Dictionary<ItemSO, int> kv in recipes.Values)
         {
-            if (!kv.Keys.All(ingredients.Keys.Contains) && kv.Count != ingredients.Count) return;
+            if (kv.Count != ingredients.Count || !kv.Keys.All(ingredients.Keys.Contains)) return;
 
             product = recipes.FirstOrDefault(x => x.Value == kv).Key;
 
@@ -287,7 +288,7 @@ public class CraftingController : MonoBehaviour
     {
         GameObject obj = Instantiate(itemPrefab, productSlot.transform);
         ItemUI objItem = obj.GetComponent<ItemUI>();
-        objItem.InitilizeItem(product, ing1 / rec1);
+        objItem.InitilizeItemUI(product, ing1 / rec1);
         objItem.parent = productSlot.transform;
         objItem.image.raycastTarget = false;
         btnCraft.gameObject.SetActive(true);

@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Soul
   m_EditorClassIdentifier: 
   id: 0
-  name: 
-  itemType: 0
+  name: Soul
+  itemType: 4
   description: 
-  icon: {fileID: 0}
+  iconUI: {fileID: -1271068483, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
+  icon: {fileID: -1653112760, guid: faea4812723c1c745b20716aad3954fb, type: 3}
   recipe:
   - {fileID: 11400000, guid: f8577311d9cd99d47a6829fd54ecd290, type: 2}
   - {fileID: 11400000, guid: 8adf8cd4ebedc6244a4145f485a0928f, type: 2}

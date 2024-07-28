@@ -16,12 +16,12 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public int count = 1;
     public Transform parent;
 
-    public void InitilizeItem(ItemSO newItem, int count)
+    public void InitilizeItemUI(ItemSO newItem, int count)
     {
         itemSO = newItem;
         name = itemSO.name;
         this.count = count;
-        image.sprite = newItem.icon;
+        image.sprite = newItem.iconUI;
         countText.text = count.ToString();
         parent = gameObject.transform.parent;
     }
@@ -84,6 +84,8 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
         if (transform.parent.CompareTag("IngredientSlot"))
         {
             if (!CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Add(itemSO, count);
+            if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients[itemSO] += count;
+
             CraftingController.Instance.PreCraft();
         }
     }

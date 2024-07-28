@@ -98,8 +98,8 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 foreach (GameObject go in destructibles)
                 {
-                    Debug.Log("destroyed");
                     go.GetComponent<SpriteRenderer>().sprite = null;
+                    go.transform.localScale = new Vector3(0, 0, 10);
                 }
             }
         }
@@ -125,7 +125,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Destructible"))
         {
             destructibles.Add(other.gameObject);
-            Debug.Log("added" + other.gameObject.name);
         }
     }
 
@@ -134,8 +133,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Destructible"))
         {
             destructibles.Remove(other.gameObject);
-            Debug.Log("removed" + other.gameObject.name);
-            if (other.GetComponent<SpriteRenderer>() == null) Destroy(other.gameObject);
+            if (other.GetComponent<SpriteRenderer>().sprite == null) Destroy(other.gameObject);
         }
     }
 }

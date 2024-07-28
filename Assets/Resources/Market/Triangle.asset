@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Triangle
   m_EditorClassIdentifier: 
   id: 0
-  name: 
-  itemType: 0
+  name: Triangle
+  itemType: 6
   description: 
-  icon: {fileID: 0}
+  iconUI: {fileID: -1681977824, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
+  icon: {fileID: -1681977824, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
   recipe:
   - {fileID: 11400000, guid: 9caaa5f0ad1c5a648998c6e9c9934d6f, type: 2}
   - {fileID: 11400000, guid: 9caaa5f0ad1c5a648998c6e9c9934d6f, type: 2}

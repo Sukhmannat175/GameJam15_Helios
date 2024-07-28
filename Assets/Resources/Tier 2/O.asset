@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: O
   m_EditorClassIdentifier: 
   id: 0
-  name: 
+  name: O
   itemType: 1
   description: 
-  icon: {fileID: 0}
+  iconUI: {fileID: -1383206201, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
+  icon: {fileID: -1693792769, guid: faea4812723c1c745b20716aad3954fb, type: 3}
   recipe:
   - {fileID: 11400000, guid: e3e3db78eabe8624a946f869de34f915, type: 2}
   - {fileID: 11400000, guid: e3e3db78eabe8624a946f869de34f915, type: 2}

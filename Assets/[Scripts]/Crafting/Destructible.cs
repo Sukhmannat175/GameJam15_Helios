@@ -25,9 +25,9 @@ public class Destructible : MonoBehaviour
 
     public void DropItem()
     {
-        int rand = Random.Range(0,  itemDrops.Count - 1);
+        int rand = Random.Range(0,  itemDrops.Count);
 
-        GameObject obj = Instantiate(itemPrefab, gameObject.transform);
+        GameObject obj = Instantiate(itemPrefab, gameObject.transform.position, Quaternion.identity);
         Item objItem = obj.GetComponent<Item>();
         objItem.InitilizeItem(itemDrops[rand], 1);
 
