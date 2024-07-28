@@ -12,6 +12,7 @@ public class ItemSO : ScriptableObject
     public new string name;
     public Type itemType;
     public string description;
+    public Sprite iconUI;
     public Sprite icon;
     public List<ItemSO> recipe;
     public List<ItemSO> componentIn;
