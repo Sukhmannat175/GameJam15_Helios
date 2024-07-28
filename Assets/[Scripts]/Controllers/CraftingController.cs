@@ -18,7 +18,6 @@ public class CraftingController : MonoBehaviour
     public List<ItemSO> products = new List<ItemSO>();
     public InventorySlot productSlot;
     public GameObject itemPrefab;
-    public GameObject crafter;
     public Button btnCraft;
     public ShadowMeter shadowMeter;
 
@@ -53,13 +52,12 @@ public class CraftingController : MonoBehaviour
 
             foreach (ItemSO i in itemSO.recipe)
             {
-                if (!temp.ContainsKey(i)) temp.Add(i, 1); 
+                if (!temp.ContainsKey(i)) temp.Add(i, 1);
                 else temp[i]++;
             }
 
             recipes.Add(itemSO, temp);
         }
-
     }
 
     public void AddItem(ItemSO itemSO)

@@ -36,11 +36,11 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        image.color = Color.blue;
+        image.color = Color.gray;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        image.color = Color.red;
+        image.color = Color.white;
     }
 }
