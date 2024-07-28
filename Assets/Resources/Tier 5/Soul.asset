@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b05fc2a54fbb014d905cb03bf8392ea, type: 3}
+  m_Name: Soul
+  m_EditorClassIdentifier: 
+  id: 0
+  name: 
+  itemType: 0
+  description: 
+  icon: {fileID: 0}
+  recipe:
+  - {fileID: 11400000, guid: f8577311d9cd99d47a6829fd54ecd290, type: 2}
+  - {fileID: 11400000, guid: 8adf8cd4ebedc6244a4145f485a0928f, type: 2}
+  - {fileID: 11400000, guid: b6fb17fcba136c7459dcc981cfc60be1, type: 2}
+  componentIn: []
