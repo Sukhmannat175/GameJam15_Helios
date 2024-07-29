@@ -1,23 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class GameController : MonoBehaviour
 {
     public GameObject crafterMenu;
+    public GameObject lantern;
 
-    // Start is called before the first frame update
+
+    public static GameController Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.C))
         {
             crafterMenu.SetActive(!crafterMenu.activeInHierarchy);
         }
+    }
+
+    public void ChangeWorlds(int worldNum)
+    {
+
     }
 }

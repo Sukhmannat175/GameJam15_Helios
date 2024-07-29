@@ -18,9 +18,9 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
     private List<GameObject> destructibles;
-    private float holdStart;
     private float lightIntensity = 1;
     private bool dim = true;
+    private int worldNum;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,9 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Movement();
-        Light();        
+        ShineLight();
+        ChangeLights();
+        ChangeWorldState();
     }
 
     private void FixedUpdate()
@@ -81,18 +83,12 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    public void Light()
+    public void ShineLight()
     {
         shadowMeter.rate = baseRate * lantern.intensity * lightInt;
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            holdStart = Time.time;
-        }
-
         if (Input.GetMouseButton(0))
         {
-            float hold = Time.time - holdStart;
             if (lantern.intensity <= maxLanternIntensity)
             {
                 lantern.intensity += 0.008f;
@@ -104,6 +100,54 @@ public class PlayerBehaviour : MonoBehaviour
                     go.GetComponent<SpriteRenderer>().sprite = null;
                     go.transform.localScale = new Vector3(0, 0, 10);
                 }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            dim = true;
+        }
+
+        if (dim)
+        {
+            if (lantern.intensity >= lightIntensity) lantern.intensity -= 0.008f;
+            else
+            {
+                lantern.intensity = lightIntensity;
+                dim = false;
+            }
+        }
+    }
+
+    private void ChangeLights()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            lantern.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            lantern.color = new Color32(255, 97, 0, 255);
+            lantern.intensity = 1;
+            worldNum = 1;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            lantern.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+            lantern.color = new Color32(3, 108, 0, 255); ;
+            worldNum = 2;
+        }
+    }
+
+    private void ChangeWorldState()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            if (lantern.intensity <= maxLanternIntensity)
+            {
+                lantern.intensity += 0.008f;
+            }
+            if (lantern.intensity >= maxLanternIntensity)
+            {
+                GameController.Instance.ChangeWorlds(worldNum);
             }
         }
 
