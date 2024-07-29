@@ -7,11 +7,12 @@ TagManager:
   - IngredientSlot
   - ProductSlot
   - Destructible
+  - Light
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Lights
   - Water
   - UI
   - 

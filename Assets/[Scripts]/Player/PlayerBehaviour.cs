@@ -9,8 +9,11 @@ public class PlayerBehaviour : MonoBehaviour
     public Animator anim;
     public Light2D lantern;
     public ShadowMeter shadowMeter;
+    public LayerMask layerMask;
     public float speed = 5f;
     public float maxLanternIntensity = 2;
+    public float baseRate = 1;
+    public float lightInt = 1;
 
     private Rigidbody2D rb;
     private Vector2 movement;
@@ -31,7 +34,7 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
         Movement();
-        Light();
+        Light();        
     }
 
     private void FixedUpdate()
@@ -80,7 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void Light()
     {
-        shadowMeter.rate = lantern.intensity;
+        shadowMeter.rate = baseRate * lantern.intensity * lightInt;
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -94,7 +97,7 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 lantern.intensity += 0.008f;
             }
-            if (hold >= 1.5f)
+            if (lantern.intensity >= maxLanternIntensity)
             {
                 foreach (GameObject go in destructibles)
                 {
@@ -128,12 +131,34 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Light"))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, (other.gameObject.transform.position - transform.position), 10, layerMask);
+            Debug.DrawRay(transform.position, (other.gameObject.transform.position - transform.position), Color.green);
+            if (hit.collider != null && hit.collider == other.GetComponentInChildren<BoxCollider2D>())
+            {
+                lightInt = 2.1f - (0.1f * Vector2.Distance(gameObject.transform.position, other.GetComponentInChildren<BoxCollider2D>().gameObject.transform.position));
+            }
+            else
+            {
+                lightInt = 1;
+            }
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Destructible"))
         {
             destructibles.Remove(other.gameObject);
             if (other.GetComponent<SpriteRenderer>().sprite == null) Destroy(other.gameObject);
+        }
+
+        if (other.gameObject.CompareTag("Light"))
+        {
+            lightInt = 1;
         }
     }
 }

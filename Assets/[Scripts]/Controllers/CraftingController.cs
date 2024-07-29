@@ -20,6 +20,7 @@ public class CraftingController : MonoBehaviour
     public GameObject itemPrefab;
     public Button btnCraft;
     public ShadowMeter shadowMeter;
+    public int craftShadow = 10;
 
     private Dictionary<ItemSO, Dictionary<ItemSO, int>> recipes;
     private ItemSO product;
@@ -189,7 +190,7 @@ public class CraftingController : MonoBehaviour
 
         foreach (Dictionary<ItemSO, int> kv in recipes.Values)
         {
-            if (kv.Count != ingredients.Count || !kv.Keys.All(ingredients.Keys.Contains)) return;
+            if (kv.Count != ingredients.Count || !kv.Keys.All(ingredients.Keys.Contains)) continue;
 
             product = recipes.FirstOrDefault(x => x.Value == kv).Key;
 
@@ -230,55 +231,6 @@ public class CraftingController : MonoBehaviour
                 return;
             }
         }
-
-
-        /*
-        int diff1 = ing1 - rec1;
-        int diff2 = ing2 - rec2;
-        int diff3 = Int32.MaxValue;
-        diff3 = ing3 - rec3;
-
-        Dictionary<ItemSO, int> kv1 = new Dictionary<ItemSO, int>();
-        Dictionary<ItemSO, int> kv2 = new Dictionary<ItemSO, int>();
-        Dictionary<ItemSO, int> kv3 = new Dictionary<ItemSO, int>();
-
-        // Random Ingredients
-        if (ing3 < rec3) rand = false;
-
-        if (rand)
-        {
-            if (ing3 - rec3 < diff3)
-            {
-                diff3 = ing3 - rec3;
-                kv3 = kv;
-            }
-        }
-
-        // Random Ingredients
-        if (ing1 >= rec1 &&
-            ing2 >= rec2 &&
-            rand)
-        {
-            if (ing1 - rec1 < diff1)
-            {
-                diff1 = ing1 - rec1;
-                kv1 = kv;
-                Debug.Log("Diff 1");
-            }
-
-            if (ing2 - rec2 < diff2)
-            {
-                diff2 = ing2 - rec2;
-                kv2 = kv;
-                Debug.Log("Diff 2");
-            }
-
-            int diff = Math.Min(diff1, Math.Min(diff2, diff3));
-            if (diff == diff1) { ShowProduct(product, kv1); Debug.Log("1" + product.name); return; }
-            if (diff == diff2) { ShowProduct(product, kv2); Debug.Log("2" + product.name); return; }
-            if (diff == diff3) { ShowProduct(product, kv3); Debug.Log("3" + product.name); return; }
-        }
-        */
     }
 
 
@@ -296,7 +248,7 @@ public class CraftingController : MonoBehaviour
     {
         AddItem(product, ing1 / rec1);
         Destroy(productSlot.GetComponentInChildren<ItemUI>().gameObject);
-        shadowMeter.currentValue += 10;
+        shadowMeter.currentValue += craftShadow * ing1 / rec1 ;
 
         for (int i = 0; i < ingredientSlots.Count; i++)
         {
