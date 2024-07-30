@@ -8,6 +8,9 @@ TagManager:
   - ProductSlot
   - Destructible
   - Light
+  - Carpet
+  - Interactive
+  - LightRange
   layers:
   - Default
   - TransparentFX

@@ -47,4 +47,4 @@ MonoBehaviour:
   destructibles:
   - {fileID: 4492457290824587527, guid: 8492701b7c18ea247b19adbfa281187e, type: 3}
   - {fileID: 9166245589454152166, guid: ad6d5628597f2a6409b3b7886f7c1fad, type: 3}
-  respawnTime: 5
+  respawnTime: 30

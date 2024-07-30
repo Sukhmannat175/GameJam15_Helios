@@ -20,7 +20,6 @@ public class PlayerBehaviour : MonoBehaviour
     private List<GameObject> destructibles;
     private float lightIntensity = 1;
     private bool dim = true;
-    private int worldNum;
 
     // Start is called before the first frame update
     void Start()
@@ -35,8 +34,6 @@ public class PlayerBehaviour : MonoBehaviour
     {
         Movement();
         ShineLight();
-        ChangeLights();
-        ChangeWorldState();
     }
 
     private void FixedUpdate()
@@ -86,6 +83,7 @@ public class PlayerBehaviour : MonoBehaviour
     public void ShineLight()
     {
         shadowMeter.rate = baseRate * lantern.intensity * lightInt;
+        if (shadowMeter.rate > shadowMeter.maxRate) shadowMeter.rate = shadowMeter.maxRate;
 
         if (Input.GetMouseButton(0))
         {
@@ -119,53 +117,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    private void ChangeLights()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            lantern.gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            lantern.color = new Color32(255, 97, 0, 255);
-            lantern.intensity = 1;
-            worldNum = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            lantern.gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-            lantern.color = new Color32(3, 108, 0, 255); ;
-            worldNum = 2;
-        }
-    }
-
-    private void ChangeWorldState()
-    {
-        if (Input.GetMouseButton(1))
-        {
-            if (lantern.intensity <= maxLanternIntensity)
-            {
-                lantern.intensity += 0.008f;
-            }
-            if (lantern.intensity >= maxLanternIntensity)
-            {
-                GameController.Instance.ChangeWorlds(worldNum);
-            }
-        }
-
-        if (Input.GetMouseButtonUp(0))
-        {
-            dim = true;
-        }
-
-        if (dim)
-        {
-            if (lantern.intensity >= lightIntensity) lantern.intensity -= 0.008f;
-            else
-            {
-                lantern.intensity = lightIntensity;
-                dim = false;
-            }
-        }
-    }
+    private int lightCount;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -173,19 +125,24 @@ public class PlayerBehaviour : MonoBehaviour
         {
             destructibles.Add(other.gameObject);
         }
+
+        if (other.gameObject.CompareTag("LightRange"))
+        {
+            lightCount++;
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Light"))
+        if (other.gameObject.CompareTag("LightRange"))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, (other.gameObject.transform.position - transform.position), 10, layerMask);
             Debug.DrawRay(transform.position, (other.gameObject.transform.position - transform.position), Color.green);
-            if (hit.collider != null && hit.collider == other.GetComponentInChildren<BoxCollider2D>())
+            if (hit.collider != null && hit.collider.gameObject.CompareTag("Light"))
             {
-                lightInt = 2.1f - (0.1f * Vector2.Distance(gameObject.transform.position, other.GetComponentInChildren<BoxCollider2D>().gameObject.transform.position));
+                lightInt = (2.1f - (0.1f * Vector2.Distance(gameObject.transform.position, hit.collider.gameObject.transform.position))) * lightCount;
             }
-            else
+            else if (hit.collider != null && hit.collider.gameObject.CompareTag("Interactive"))
             {
                 lightInt = 1;
             }
@@ -200,9 +157,10 @@ public class PlayerBehaviour : MonoBehaviour
             if (other.GetComponent<SpriteRenderer>().sprite == null) Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("Light"))
+        if (other.gameObject.CompareTag("LightRange"))
         {
             lightInt = 1;
+            lightCount--;
         }
     }
 }

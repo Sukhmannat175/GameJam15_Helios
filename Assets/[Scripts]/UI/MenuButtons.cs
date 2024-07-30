@@ -82,4 +82,9 @@ public class MenuButtons : MonoBehaviour
         AudioController.Instance.Play("MainMenuClick");
         SceneManager.LoadScene(0);
     }
+
+    public void LoadScene(int id)
+    {
+        SceneManager.LoadScene(id);
+    }
 }

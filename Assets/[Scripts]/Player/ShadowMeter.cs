@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ShadowMeter : MonoBehaviour
@@ -16,11 +17,14 @@ public class ShadowMeter : MonoBehaviour
 
     private void Update()
     {
-        if (rate >= maxRate) rate = maxRate;
+        if (currentValue >= maxValue) currentValue = maxValue;
 
-        currentValue -= rate/60;
+        currentValue -= rate/120;
         uiFill.fillAmount = Mathf.InverseLerp(0, maxValue, currentValue);
 
-        if (currentValue <= 0) Debug.Log("U dead");
+        if (currentValue <= 0)
+        {
+            SceneManager.LoadScene(6);
+        }
     }  
 }
