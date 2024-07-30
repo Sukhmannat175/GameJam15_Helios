@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
         {
             Instance = this;
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     void Start()
