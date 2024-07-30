@@ -8,6 +8,7 @@ public class MenuButtons : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject craftingMenu;
     public GameObject optionsMenu;
+    public GameObject tutorial;
 
     public void Update()
     {
@@ -23,6 +24,12 @@ public class MenuButtons : MonoBehaviour
             if (optionsMenu.activeInHierarchy)
             {
                 optionsMenu.SetActive(false);
+                return;
+            }
+
+            if (tutorial.activeInHierarchy)
+            {
+                tutorial.SetActive(false);
                 return;
             }
 
@@ -55,6 +62,12 @@ public class MenuButtons : MonoBehaviour
     {
         optionsMenu.SetActive(!optionsMenu.activeInHierarchy);
         AudioController.Instance.Play("MainMenuClick");
+    }
+
+    public void Tutorial()
+    {
+        AudioController.Instance.Play("MainMenuClick");
+        tutorial.SetActive(!tutorial.activeInHierarchy);
     }
 
     public void CraftingMenu()
