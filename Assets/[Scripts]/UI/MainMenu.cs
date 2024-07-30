@@ -15,6 +15,7 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
+        AudioController.Instance.Play("MainMenuClick");
         if (Input.GetKeyUp(KeyCode.Escape))
         {
             optionsMenu.SetActive(false);
@@ -25,25 +26,26 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
         AudioController.Instance.Play("MainMenuClick");
+        SceneManager.LoadScene(1);
     }
 
     public void OptionsMenu()
     {
-        optionsMenu.SetActive(!optionsMenu.activeInHierarchy);
         AudioController.Instance.Play("MainMenuClick");
+        optionsMenu.SetActive(!optionsMenu.activeInHierarchy);
+        
     }
 
     public void Tutorial()
     {
-        tutorial.SetActive(!tutorial.activeInHierarchy);
         AudioController.Instance.Play("MainMenuClick");
+        tutorial.SetActive(!tutorial.activeInHierarchy);
     }
 
     public void Quit()
     {
-        Application.Quit();
         AudioController.Instance.Play("MainMenuClick");
+        Application.Quit();
     }
 }

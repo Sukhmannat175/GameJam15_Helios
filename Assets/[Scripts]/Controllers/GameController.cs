@@ -5,7 +5,6 @@ using UnityEngine.Rendering.Universal;
 
 public class GameController : MonoBehaviour
 {
-    public GameObject crafterMenu;
     public GameObject lantern;
 
 
@@ -32,15 +31,19 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            crafterMenu.SetActive(!crafterMenu.activeInHierarchy);
-        }
+        
     }
 
     public void ChangeWorlds(int worldNum)
     {
 
+    }
+
+    public void Pause(bool pause)
+    {
+        if (pause)
+        {
+
+        }
     }
 }
