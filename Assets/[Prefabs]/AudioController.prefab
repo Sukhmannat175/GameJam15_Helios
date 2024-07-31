@@ -69,3 +69,15 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: MainBGM
+    clip: {fileID: 8300000, guid: 13c23f88a5df74b42abaeb49f2aedfcd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: MenuClick
+    clip: {fileID: 8300000, guid: 13c23f88a5df74b42abaeb49f2aedfcd, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

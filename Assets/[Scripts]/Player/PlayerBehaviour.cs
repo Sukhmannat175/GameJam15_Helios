@@ -83,8 +83,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     public void ShineLight()
     {
-        shadowMeter.rate = baseRate * lantern.intensity * lightInt;
-        if (shadowMeter.rate > shadowMeter.maxRate) shadowMeter.rate = shadowMeter.maxRate;
+        if (!GameController.Instance.isPaused)
+        {
+            shadowMeter.rate = baseRate * lantern.intensity * lightInt;
+            if (shadowMeter.rate > shadowMeter.maxRate) shadowMeter.rate = shadowMeter.maxRate;
+        }
 
         if (Input.GetMouseButton(0))
         {

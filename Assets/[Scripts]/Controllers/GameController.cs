@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour
 
     public ShadowMeter shadowMeter;
     public List<ItemSO> tier5;
+    public bool isPaused = false;
 
     private float rate;
     private void Awake()
@@ -31,12 +32,14 @@ public class GameController : MonoBehaviour
     {
         if (pause)
         {
+            isPaused = true;
             rate = shadowMeter.rate;
             Time.timeScale = 0;
             shadowMeter.rate = 0; 
         }
         else
         {
+            isPaused = false;
             Time.timeScale = 1;
             shadowMeter.rate = rate;
         }

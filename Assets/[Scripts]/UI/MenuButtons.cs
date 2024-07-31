@@ -14,28 +14,31 @@ public class MenuButtons : MonoBehaviour
     public void Update()
     {
         if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            AudioController.Instance.Play("MenuClick");
+        {            
             if (craftingMenu.activeInHierarchy)
             {
+                AudioController.Instance.Play("BagClose");
                 craftingMenu.SetActive(false);
                 return;
             }
 
             if (optionsMenu.activeInHierarchy)
             {
+                AudioController.Instance.Play("MenuClick");
                 optionsMenu.SetActive(false);
                 return;
             }
 
             if (tutorial.activeInHierarchy)
             {
+                AudioController.Instance.Play("MenuClick");
                 tutorial.SetActive(false);
                 return;
             }
 
             if (recipeMenu.activeInHierarchy)
             {
+                AudioController.Instance.Play("BagOpen");
                 recipeMenu.SetActive(false);
                 craftingMenu.SetActive(true);
                 return;
@@ -68,8 +71,8 @@ public class MenuButtons : MonoBehaviour
 
     public void OptionsMenu()
     {
-        optionsMenu.SetActive(!optionsMenu.activeInHierarchy);
         AudioController.Instance.Play("MainMenuClick");
+        optionsMenu.SetActive(!optionsMenu.activeInHierarchy);
     }
 
     public void Tutorial()
@@ -80,8 +83,11 @@ public class MenuButtons : MonoBehaviour
 
     public void CraftingMenu()
     {
-        AudioController.Instance.Play("MenuClick");
         if (pauseMenu.activeInHierarchy) { return; }
+
+        if (!craftingMenu.activeInHierarchy) AudioController.Instance.Play("BagOpen");
+        else if (craftingMenu.activeInHierarchy) AudioController.Instance.Play("BagClose");
+
         if (recipeMenu.activeInHierarchy)
         {
             recipeMenu.SetActive(false);
@@ -91,8 +97,11 @@ public class MenuButtons : MonoBehaviour
 
     public void RecipeMenu()
     {
-        AudioController.Instance.Play("MenuClick");
         if (pauseMenu.activeInHierarchy) { return; }
+
+        if (!recipeMenu.activeInHierarchy) AudioController.Instance.Play("BagClose");
+        else if (recipeMenu.activeInHierarchy) AudioController.Instance.Play("BagOpen");
+
         craftingMenu.SetActive(!craftingMenu.activeInHierarchy);
         recipeMenu.SetActive(!recipeMenu.activeInHierarchy);
     }
