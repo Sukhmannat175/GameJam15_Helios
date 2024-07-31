@@ -28,6 +28,7 @@ public class Destructible : MonoBehaviour
 
     public void DropItem()
     {
+        AudioController.Instance.Play("Destroy");
         int rand = Random.Range(0,  itemDrops.Count);
 
         GameObject obj = Instantiate(itemPrefab, gameObject.transform.position, Quaternion.identity);

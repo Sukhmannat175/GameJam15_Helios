@@ -21,6 +21,7 @@ public class Item : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            AudioController.Instance.Play("Pickup");
             CraftingController.Instance.AddItem(itemSO);
             Destroy(gameObject);
         }

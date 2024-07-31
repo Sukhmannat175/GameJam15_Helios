@@ -6,6 +6,7 @@ using UnityEngine.Audio;
 public class AudioController : MonoBehaviour
 {
     public List<Sound> sounds;
+    public AudioMixer mixer;
 
     public static AudioController Instance { get; private set; }
 
@@ -44,5 +45,10 @@ public class AudioController : MonoBehaviour
         Sound s = sounds.Find(sound => sound.name == name);
         if (s == null) return;
         s.source.Stop();
+    }
+
+    public void SetVolume(float volume)
+    {
+        mixer.SetFloat("volume", volume);
     }
 }

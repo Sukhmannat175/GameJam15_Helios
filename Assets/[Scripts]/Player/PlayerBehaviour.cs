@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -15,19 +14,39 @@ public class PlayerBehaviour : MonoBehaviour
     public float maxLanternIntensity = 2;
     public float baseRate = 1;
     public float lightInt = 1;
+    public List<string> woodSteps;
 
     private Rigidbody2D rb;
     private Vector2 movement;
     private List<GameObject> destructibles;
     private float lightIntensity = 1;
     private bool dim = true;
+    private bool wood = true;
     
+    public IEnumerator Steps()
+    {
+        while (true)
+        {
+            if (wood)
+            {
+                int rand = UnityEngine.Random.Range(0, woodSteps.Count);
+                AudioController.Instance.Play(woodSteps[rand]);
+                yield return new WaitForSeconds(0.5f);
+            }
+            else
+            {
+                yield return null;
+            }
+        }
+    }
+
 // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         destructibles = new List<GameObject>();
+        StartCoroutine(Steps());
     }
 
     // Update is called once per frame
@@ -50,6 +69,15 @@ public class PlayerBehaviour : MonoBehaviour
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.sqrMagnitude);
+
+        if (movement.sqrMagnitude <= 0)
+        {
+            wood = false;
+        }
+        else if (movement.sqrMagnitude > 0)
+        {
+            wood = true;
+        }
 
         if(movement.x == 1)
         {

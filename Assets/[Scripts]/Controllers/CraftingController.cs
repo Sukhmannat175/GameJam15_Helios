@@ -254,11 +254,12 @@ public class CraftingController : MonoBehaviour
         AddItem(product, ing1 / rec1);
         Destroy(productSlot.GetComponentInChildren<ItemUI>().gameObject);
 
-        if (product.itemType == ItemSO.Type.Tier2) craftShadow = 20;
-        if (product.itemType == ItemSO.Type.Tier3) craftShadow = 50;
-        if (product.itemType == ItemSO.Type.Tier4) craftShadow = 100;
+        if (product.itemType == ItemSO.Type.Tier2) AudioController.Instance.Play("Craft"); craftShadow = 20;
+        if (product.itemType == ItemSO.Type.Tier3) AudioController.Instance.Play("Craft"); craftShadow = 50;
+        if (product.itemType == ItemSO.Type.Tier4) AudioController.Instance.Play("Craft"); craftShadow = 100;
         if (product.itemType == ItemSO.Type.Tier5)
         {
+            AudioController.Instance.Play("BigCraft");
             craftShadow = 200;
             if (!GameController.Instance.tier5.Contains(product)) GameController.Instance.tier5.Add(product);
         }
