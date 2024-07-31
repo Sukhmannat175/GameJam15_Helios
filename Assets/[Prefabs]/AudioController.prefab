@@ -63,3 +63,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: VictoryBGM
+    clip: {fileID: 8300000, guid: 7d9c2c929e015b840910031be5afc3c8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

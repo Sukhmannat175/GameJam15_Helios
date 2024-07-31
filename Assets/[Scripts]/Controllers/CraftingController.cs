@@ -2,13 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.Mathematics;
 using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.XR;
-using static UnityEditor.Progress;
 
 public class CraftingController : MonoBehaviour
 {
@@ -296,5 +293,10 @@ public class CraftingController : MonoBehaviour
         }
 
         btnCraft.gameObject.SetActive(false);
+
+        if (GameController.Instance.tier5.Count == 3)
+        {
+            SceneManager.LoadScene(3);
+        }
     }
 }

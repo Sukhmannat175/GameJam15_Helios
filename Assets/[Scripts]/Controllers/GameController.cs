@@ -27,14 +27,6 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    void Update()
-    {
-        if (tier5.Count == 3)
-        {
-            SceneManager.LoadScene(5);
-        }
-    }
-
     public void Pause(bool pause)
     {
         if (pause)

@@ -105,6 +105,7 @@ public class MenuButtons : MonoBehaviour
 
     public void LoadScene(int id)
     {
+        AudioController.Instance.Play("MainMenuClick");
         SceneManager.LoadScene(id);
     }
 }

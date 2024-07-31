@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/[Scenes]/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/[Scenes]/OfficialScenes/MainMenu.unity
+    guid: 2cbb3e144bdc8984d87c312a966d74e0
+  - enabled: 1
+    path: Assets/[Scenes]/ZyseusScene.unity
+    guid: bb2112c767b6f8a499d73315141474f7
+  - enabled: 1
+    path: Assets/[Scenes]/OfficialScenes/GameOver.unity
+    guid: 556ac7cd415b73344b7c1beeabfbb993
+  - enabled: 1
+    path: Assets/[Scenes]/OfficialScenes/Victory.unity
+    guid: 892197f3f9579eb4097e4a5a5a3896e2
   m_configObjects: {}
