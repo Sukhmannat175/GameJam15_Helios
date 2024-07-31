@@ -79,12 +79,13 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        if (transform.parent.CompareTag("ProductSlot")) return;
         image.raycastTarget = true;
         transform.SetParent(parent);
         if (transform.parent.CompareTag("IngredientSlot"))
         {
             if (!CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Add(itemSO, count);
-            if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients[itemSO] += count;
+            else if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients[itemSO] += count;
 
             CraftingController.Instance.PreCraft();
         }
