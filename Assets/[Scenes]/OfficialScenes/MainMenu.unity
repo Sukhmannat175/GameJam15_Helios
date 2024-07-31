@@ -3966,7 +3966,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030041, y: -237.11}
+  m_AnchoredPosition: {x: 0.000030517578, y: -237.10999}
   m_SizeDelta: {x: 0.000030518, y: -38.9829}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1414698299
@@ -5324,7 +5324,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: 0.000013351}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 260.581, y: 70.521}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1908501564
@@ -6836,6 +6836,18 @@ PrefabInstance:
       propertyPath: sounds.Array.data[1].source
       value: 
       objectReference: {fileID: 310277745}
+    - target: {fileID: 1669303945241385899, guid: c6e81a040286caa45927dc4fafa8b110, type: 3}
+      propertyPath: sounds.Array.data[24].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669303945241385899, guid: c6e81a040286caa45927dc4fafa8b110, type: 3}
+      propertyPath: sounds.Array.data[26].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669303945241385899, guid: c6e81a040286caa45927dc4fafa8b110, type: 3}
+      propertyPath: sounds.Array.data[27].volume
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4389051172329965678, guid: c6e81a040286caa45927dc4fafa8b110, type: 3}
       propertyPath: m_Name
       value: AudioController
