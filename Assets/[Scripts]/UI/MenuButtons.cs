@@ -9,6 +9,7 @@ public class MenuButtons : MonoBehaviour
     public GameObject craftingMenu;
     public GameObject optionsMenu;
     public GameObject tutorial;
+    public GameObject recipeMenu;
 
     public void Update()
     {
@@ -30,6 +31,13 @@ public class MenuButtons : MonoBehaviour
             if (tutorial.activeInHierarchy)
             {
                 tutorial.SetActive(false);
+                return;
+            }
+
+            if (recipeMenu.activeInHierarchy)
+            {
+                recipeMenu.SetActive(false);
+                craftingMenu.SetActive(true);
                 return;
             }
 
@@ -74,7 +82,19 @@ public class MenuButtons : MonoBehaviour
     {
         AudioController.Instance.Play("MenuClick");
         if (pauseMenu.activeInHierarchy) { return; }
+        if (recipeMenu.activeInHierarchy)
+        {
+            recipeMenu.SetActive(false);
+        }
         craftingMenu.SetActive(!craftingMenu.activeInHierarchy);
+    }
+
+    public void RecipeMenu()
+    {
+        AudioController.Instance.Play("MenuClick");
+        if (pauseMenu.activeInHierarchy) { return; }
+        craftingMenu.SetActive(!craftingMenu.activeInHierarchy);
+        recipeMenu.SetActive(!recipeMenu.activeInHierarchy);
     }
 
     public void QuitToStart()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   name: Triangle
-  itemType: 6
+  itemType: 3
   description: 
   iconUI: {fileID: -1681977824, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
   icon: {fileID: -1681977824, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   name: Square
-  itemType: 6
+  itemType: 3
   description: 
   iconUI: {fileID: -1888774765, guid: 846faf09a79568142b41ae56cf97b76f, type: 3}
   icon: {fileID: -898828845, guid: faea4812723c1c745b20716aad3954fb, type: 3}

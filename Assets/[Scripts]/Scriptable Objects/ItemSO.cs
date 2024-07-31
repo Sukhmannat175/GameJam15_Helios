@@ -23,8 +23,6 @@ public class ItemSO : ScriptableObject
         Tier2,
         Tier3,
         Tier4,
-        Tier5,
-        Quest,
-        Market
+        Tier5
     }
 }
