@@ -89,6 +89,11 @@ public class PlayerBehaviour : MonoBehaviour
             if (shadowMeter.rate > shadowMeter.maxRate) shadowMeter.rate = shadowMeter.maxRate;
         }
 
+        if (Input.GetMouseButtonDown(0) && GameController.Instance.shine)
+        {
+            AudioController.Instance.Play("ShineLight");
+        }
+
         if (Input.GetMouseButton(0))
         {
             if (lantern.intensity <= maxLanternIntensity)

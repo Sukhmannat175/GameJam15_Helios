@@ -18,6 +18,7 @@ public class MenuButtons : MonoBehaviour
             if (craftingMenu.activeInHierarchy)
             {
                 AudioController.Instance.Play("BagClose");
+                GameController.Instance.shine = true;
                 craftingMenu.SetActive(false);
                 return;
             }
@@ -32,6 +33,7 @@ public class MenuButtons : MonoBehaviour
             if (tutorial.activeInHierarchy)
             {
                 AudioController.Instance.Play("MenuClick");
+                GameController.Instance.shine = true;
                 tutorial.SetActive(false);
                 return;
             }
@@ -60,10 +62,12 @@ public class MenuButtons : MonoBehaviour
         {
             craftingMenu.SetActive(false);
             pauseMenu.SetActive(true);
+            GameController.Instance.shine = false;
             GameController.Instance.Pause(true);
         }
         else
         {
+            GameController.Instance.shine = true;
             pauseMenu.SetActive(false);
             GameController.Instance.Pause(false);
         }
@@ -85,8 +89,16 @@ public class MenuButtons : MonoBehaviour
     {
         if (pauseMenu.activeInHierarchy) { return; }
 
-        if (!craftingMenu.activeInHierarchy) AudioController.Instance.Play("BagOpen");
-        else if (craftingMenu.activeInHierarchy) AudioController.Instance.Play("BagClose");
+        if (!craftingMenu.activeInHierarchy)
+        {
+            GameController.Instance.shine = false;
+            AudioController.Instance.Play("BagOpen");
+        }
+        else if (craftingMenu.activeInHierarchy)
+        {
+            GameController.Instance.shine = true;
+            AudioController.Instance.Play("BagClose");
+        }
 
         if (recipeMenu.activeInHierarchy)
         {

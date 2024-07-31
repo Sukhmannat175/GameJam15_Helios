@@ -38,4 +38,11 @@ public class AudioController : MonoBehaviour
         if (s == null) return;
         s.source.Play();
     }
+
+    public void Stop(string name)
+    {
+        Sound s = sounds.Find(sound => sound.name == name);
+        if (s == null) return;
+        s.source.Stop();
+    }
 }

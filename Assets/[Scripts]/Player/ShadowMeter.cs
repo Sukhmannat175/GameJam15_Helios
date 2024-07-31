@@ -32,7 +32,7 @@ public class ShadowMeter : MonoBehaviour
 
         if (currentValue <= 0)
         {
-            SceneManager.LoadScene(6);
+            SceneManager.LoadScene(2);
         }
     }  
 }

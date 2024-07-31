@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayMusic : MonoBehaviour
 {
-    public string clipName;
+    public string playName;
+    public string stopName;
 
     void Start()
     {
-        AudioController.Instance.Play(clipName);
+        AudioController.Instance.Play(playName);
+        AudioController.Instance.Stop(stopName);
     }
 }

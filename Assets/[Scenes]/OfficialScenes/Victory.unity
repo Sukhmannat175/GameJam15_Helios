@@ -760,7 +760,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63a36ffd1fc20e044be121edc93a04c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipName: VictoryBGM
+  playName: VictoryBGM
+  stopName: MainBGM
 --- !u!82 &1579402286
 AudioSource:
   m_ObjectHideFlags: 0

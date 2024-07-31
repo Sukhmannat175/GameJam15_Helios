@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public ShadowMeter shadowMeter;
     public List<ItemSO> tier5;
     public bool isPaused = false;
+    public bool shine = true;
 
     private float rate;
     private void Awake()
