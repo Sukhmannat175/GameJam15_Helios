@@ -15,9 +15,9 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        AudioController.Instance.Play("MainMenuClick");
         if (Input.GetKeyUp(KeyCode.Escape))
         {
+            AudioController.Instance.Play("MainMenuClick");
             optionsMenu.SetActive(false);
             tutorial.SetActive(false);
             gameObject.SetActive(true);
