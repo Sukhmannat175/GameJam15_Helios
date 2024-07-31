@@ -12,8 +12,13 @@ public class ShadowMeter : MonoBehaviour
     public float currentValue;
     public float rate;
     public float maxRate = 10;
+    public SpriteRenderer shadow;
+    private Color color;
 
-    // Start is called before the first frame update
+    private void Start()
+    {
+        color = shadow.color;
+    }
 
     private void Update()
     {
@@ -21,6 +26,9 @@ public class ShadowMeter : MonoBehaviour
 
         currentValue -= rate/120;
         uiFill.fillAmount = Mathf.InverseLerp(0, maxValue, currentValue);
+
+        color.a = currentValue / maxValue;
+        shadow.color = color;
 
         if (currentValue <= 0)
         {

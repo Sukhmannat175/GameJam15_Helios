@@ -29,7 +29,7 @@ public class InventorySlot : MonoBehaviour, IDropHandler, IPointerEnterHandler, 
             if (transform.childCount > 0 &&
                 transform.GetComponentInChildren<ItemUI>().itemSO == inventoryItem.itemSO)
             {
-                CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<ItemUI>());
+                CraftingController.Instance.MergeItems(inventoryItem, GetComponentInChildren<ItemUI>(), CompareTag("IngredientSlot"));
             }
         }
     }

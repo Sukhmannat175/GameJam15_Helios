@@ -97,6 +97,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         if (eventData.button == PointerEventData.InputButton.Left)
         {
+            if (transform.parent.CompareTag("IngredientSlot")) return;
             if (CraftingController.Instance.AddIngredient(itemSO))
             {
                 SubCount(1);

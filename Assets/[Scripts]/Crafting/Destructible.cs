@@ -9,16 +9,19 @@ public class Destructible : MonoBehaviour
     public GameObject itemPrefab;
 
     private SpriteRenderer sr;
+    private CircleCollider2D cc;
 
     private void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        cc = GetComponent<CircleCollider2D>();
     }
 
     private void Update()
     {
         if (sr.sprite == null)
         {
+            cc.enabled = false;
             DropItem();
         }
     }

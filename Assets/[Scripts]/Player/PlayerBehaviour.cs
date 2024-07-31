@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -20,8 +21,8 @@ public class PlayerBehaviour : MonoBehaviour
     private List<GameObject> destructibles;
     private float lightIntensity = 1;
     private bool dim = true;
-
-    // Start is called before the first frame update
+    
+// Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -117,18 +118,11 @@ public class PlayerBehaviour : MonoBehaviour
         }
     }
 
-    private int lightCount;
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Destructible"))
         {
             destructibles.Add(other.gameObject);
-        }
-
-        if (other.gameObject.CompareTag("LightRange"))
-        {
-            lightCount++;
         }
     }
 
@@ -140,7 +134,7 @@ public class PlayerBehaviour : MonoBehaviour
             Debug.DrawRay(transform.position, (other.gameObject.transform.position - transform.position), Color.green);
             if (hit.collider != null && hit.collider.gameObject.CompareTag("Light"))
             {
-                lightInt = (2.1f - (0.1f * Vector2.Distance(gameObject.transform.position, hit.collider.gameObject.transform.position))) * lightCount;
+                lightInt = 5.4f - (0.4f * Vector2.Distance(gameObject.transform.position, hit.collider.gameObject.transform.position));
             }
             else if (hit.collider != null && hit.collider.gameObject.CompareTag("Interactive"))
             {
@@ -160,7 +154,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("LightRange"))
         {
             lightInt = 1;
-            lightCount--;
         }
     }
 }

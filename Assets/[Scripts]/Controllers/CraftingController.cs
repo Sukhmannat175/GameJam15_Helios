@@ -91,12 +91,18 @@ public class CraftingController : MonoBehaviour
         }
     }
 
-    public void MergeItems(ItemUI merge, ItemUI item)
+    public void MergeItems(ItemUI merge, ItemUI item, bool call)
     {
         if (merge.itemSO != null &&
             merge.itemSO == item.itemSO)
         {
             int sum = merge.count + item.count;
+            if (call)
+            {
+                ingredients[merge.itemSO] = merge.count + item.count;
+                PreCraft();
+            }
+
             if (sum <= maxStack)
             {
                 item.count = merge.count + item.count;
