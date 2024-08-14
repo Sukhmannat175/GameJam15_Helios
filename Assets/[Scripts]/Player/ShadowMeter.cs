@@ -32,6 +32,7 @@ public class ShadowMeter : MonoBehaviour
 
         if (currentValue <= 0)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(2);
         }
     }  

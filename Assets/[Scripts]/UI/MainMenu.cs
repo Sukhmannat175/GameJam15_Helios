@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        AudioController.Instance.Stop("MainBGM");
+        AudioController.Instance.Stop("VictoryBGM");
+        AudioController.Instance.Stop("GameOverBGM");
         AudioController.Instance.Play("MainMenuBGM");
     }
 
@@ -26,6 +29,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
+        Time.timeScale = 1;
         AudioController.Instance.Play("MainMenuClick");
         SceneManager.LoadScene(1);
     }

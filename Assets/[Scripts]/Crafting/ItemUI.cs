@@ -55,16 +55,8 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (transform.parent.CompareTag("ProductSlot")) return;
-
+        if (transform.parent.CompareTag("IngredientSlot")) return;
         image.raycastTarget = false;
-        if (transform.parent.CompareTag("IngredientSlot"))
-        {
-            if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Remove(itemSO);
-            parent = transform.parent;
-            transform.SetParent(transform.root);
-            CraftingController.Instance.PreCraft();
-            return;
-        }
         
         parent = transform.parent;
         transform.SetParent(transform.root);
@@ -73,6 +65,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void OnDrag(PointerEventData eventData)
     {
         if (transform.parent.CompareTag("ProductSlot")) return;
+        if (transform.parent.CompareTag("IngredientSlot")) return;
 
         transform.position = Input.mousePosition;
     }
@@ -80,15 +73,9 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
     public void OnEndDrag(PointerEventData eventData)
     {
         if (transform.parent.CompareTag("ProductSlot")) return;
+        if (transform.parent.CompareTag("IngredientSlot")) return;
         image.raycastTarget = true;
         transform.SetParent(parent);
-        if (transform.parent.CompareTag("IngredientSlot"))
-        {
-            if (!CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients.Add(itemSO, count);
-            else if (CraftingController.Instance.ingredients.ContainsKey(itemSO)) CraftingController.Instance.ingredients[itemSO] += count;
-
-            CraftingController.Instance.PreCraft();
-        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -107,6 +94,7 @@ public class ItemUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
         if (eventData.button == PointerEventData.InputButton.Right)
         {
+            if (transform.parent.CompareTag("InventorySlot")) return;
             if (CraftingController.Instance.RemoveIngredient(itemSO))
             {
                 SubCount(1);

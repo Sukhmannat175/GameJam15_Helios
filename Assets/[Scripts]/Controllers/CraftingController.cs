@@ -38,8 +38,6 @@ public class CraftingController : MonoBehaviour
         {
             Instance = this;
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -88,17 +86,12 @@ public class CraftingController : MonoBehaviour
         }
     }
 
-    public void MergeItems(ItemUI merge, ItemUI item, bool call)
+    public void MergeItems(ItemUI merge, ItemUI item)
     {
         if (merge.itemSO != null &&
             merge.itemSO == item.itemSO)
         {
             int sum = merge.count + item.count;
-            if (call)
-            {
-                ingredients[merge.itemSO] = merge.count + item.count;
-                PreCraft();
-            }
 
             if (sum <= maxStack)
             {
@@ -276,7 +269,10 @@ public class CraftingController : MonoBehaviour
             if (!GameController.Instance.tier5.Contains(product)) GameController.Instance.tier5.Add(product);
         }
 
-        shadowMeter.currentValue += (craftShadow * ing1 / rec1) ;
+        shadowMeter.currentValue += (craftShadow * ing1 / rec1);
+
+        if (ingredientSlots[0].GetComponentInChildren<ItemUI>() == null && ingredientSlots[2].GetComponentInChildren<ItemUI>() != null) ing3 = ing1;
+        if (ingredientSlots[1].GetComponentInChildren<ItemUI>() == null && ingredientSlots[2].GetComponentInChildren<ItemUI>() != null) ing3 = ing2;
 
         for (int i = 0; i < ingredientSlots.Count; i++)
         {
@@ -309,6 +305,7 @@ public class CraftingController : MonoBehaviour
 
         if (GameController.Instance.tier5.Count == 3)
         {
+            Time.timeScale = 1;
             SceneManager.LoadScene(3);
         }
     }

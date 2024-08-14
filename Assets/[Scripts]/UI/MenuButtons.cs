@@ -120,12 +120,14 @@ public class MenuButtons : MonoBehaviour
 
     public void QuitToStart()
     {
+        Time.timeScale = 1;
         AudioController.Instance.Play("MainMenuClick");
         SceneManager.LoadScene(0);
     }
 
     public void LoadScene(int id)
     {
+        Time.timeScale = 1;
         AudioController.Instance.Play("MainMenuClick");
         SceneManager.LoadScene(id);
     }

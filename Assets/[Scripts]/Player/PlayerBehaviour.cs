@@ -124,6 +124,7 @@ public class PlayerBehaviour : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
+            dim = false;
             if (lantern.intensity <= maxLanternIntensity)
             {
                 lantern.intensity += 0.008f;
